@@ -1,0 +1,22 @@
+package demo1;
+
+class Runner extends Thread {
+
+	@Override
+	public void run() {
+		for (int i = 0; i < 10; i++) {
+			System.out.println("Hello " + i);
+			
+			Thread.sleep(100);
+		}
+	}
+	
+}
+public class App {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

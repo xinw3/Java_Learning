@@ -1,0 +1,55 @@
+!SESSION 2017-04-09 10:02:22.008 -----------------------------------------------
+eclipse.buildId=4.6.0.I20160606-1100
+java.version=1.8.0_102
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/xinwang/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.jee.product -keyring /Users/xinwang/.eclipse_keyring
+
+!ENTRY org.eclipse.core.net 1 0 2017-04-09 10:02:41.330
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2017-04-09 10:02:48.171
+!MESSAGE Starting the AWS toolkit core plugin...
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2017-04-09 10:02:50.846
+!MESSAGE No profile found: default
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2017-04-09 10:02:50.849
+!MESSAGE No profile found: xinwang
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2017-04-09 10:02:50.871
+!MESSAGE Monitoring content of /Users/xinwang/.aws/credentials
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2017-04-09 10:02:50.937
+!MESSAGE AWS toolkit core plugin initialized after 2767 milliseconds.
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2017-04-09 10:02:50.966
+!MESSAGE The current accountId is not found in the system. Switching to the default account.
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2017-04-09 10:02:51.154
+!MESSAGE Initialized a new Cognito identity us-east-1:ba1e52a3-a47c-4179-8fd7-44492b4e2f8c
+
+!ENTRY WACommon 4 0 2017-04-09 10:02:54.038
+!MESSAGE Plugin folder path:/Applications/Eclipse.app/Contents/Eclipse/../../../../Users/xinwang/.p2/pool/plugins
+
+!ENTRY org.eclipse.oomph.setup.ui 1 0 2017-04-09 10:02:56.495
+!MESSAGE Setup tasks were performed during startup updating 5 preferences. See '/Applications/Eclipse.app/Contents/Eclipse/configuration/org.eclipse.oomph.setup/setup.log' for details
+
+!ENTRY com.amazonaws.eclipse.sdk.ui 1 0 2017-04-09 10:04:27.099
+!MESSAGE Downloading the SDK from CloudFront to location /var/folders/g4/y8x59s9j4f17hmvvtnb6g6w40000gn/T/aws-java-sdk458654817163246024/sdk.zip
+
+!ENTRY com.amazonaws.eclipse.sdk.ui 1 0 2017-04-09 10:04:40.578
+!MESSAGE SDK download completes. Location: /var/folders/g4/y8x59s9j4f17hmvvtnb6g6w40000gn/T/aws-java-sdk458654817163246024/sdk.zip, File-length: 276175740
+
+!ENTRY org.eclipse.jface.text 2 0 2017-04-09 10:05:07.346
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2017-04-09 10:05:07.347
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.eclipse.jface.text 2 0 2017-04-09 10:05:07.595
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2017-04-09 10:05:07.597
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
