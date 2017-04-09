@@ -8,10 +8,6 @@ public class Worker {
 
 	private Random random = new Random();
 	
-	/**
-	 * by using two locks, the synchronized methods of different locks
-	 * can run the method at the same time.
-	 */
 	private Object lock1 = new Object();
 	private Object lock2 = new Object();
 	

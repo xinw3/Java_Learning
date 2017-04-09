@@ -8,10 +8,6 @@ public class Worker {
 
 	private Random random = new Random();
 	
-	/**
-	 * by using two locks, the synchronized methods of different locks
-	 * can run the method at the same time.
-	 */
 	private Object lock1 = new Object();
 	private Object lock2 = new Object();
 	
@@ -37,7 +33,7 @@ public class Worker {
 			list1.add(random.nextInt(100));
 		}
 	}
-	public void stageTwo() {
+	public synchronized void stageTwo() {
 		synchronized(lock2) {
 			try {
 				Thread.sleep(1);
