@@ -1,0 +1,5 @@
+package threadSafe;
+
+public class SynchronizedApp {
+
+}

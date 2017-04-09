@@ -1,0 +1,15 @@
+package threadSafe;
+
+public class SyncApp {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		SyncApp app = new SyncApp();
+		app.doWork();
+
+	}
+	public void doWork() {
+		
+	}
+
+}
