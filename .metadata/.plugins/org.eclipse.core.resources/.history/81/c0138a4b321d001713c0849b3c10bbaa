@@ -1,0 +1,17 @@
+package demo2;
+
+class Processor extends Thread {
+	public void run() {
+		while (true) {
+			System.out.println("Hello!");
+		}
+	}
+}
+public class App {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

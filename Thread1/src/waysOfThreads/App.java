@@ -24,8 +24,8 @@ public class App {
 
 	public static void main(String[] args) {
 		// It's important not to call run().
-		// If call run, it will run the method not the main thread application.
-		// if call start, that tell the thread class to go to look for the run method.
+		// If call run, it excutes the run method in the current thread.
+		// If call start, it starts a new thread and calls the run method.
 		Runner runner1 = new Runner();
 		runner1.start();
 		
