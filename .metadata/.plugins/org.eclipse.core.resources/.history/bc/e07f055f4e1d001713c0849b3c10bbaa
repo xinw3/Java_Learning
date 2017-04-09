@@ -1,0 +1,16 @@
+package threadSafe;
+
+class Processor implements Runnable {
+	
+	public void run() {
+		
+	}
+}
+public class TheadPollsApp {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
