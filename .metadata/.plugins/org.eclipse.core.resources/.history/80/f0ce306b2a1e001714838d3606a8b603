@@ -1,0 +1,12 @@
+package threadSafe;
+
+public class WaitNotifyProcessor {
+
+	public void produce() {
+		
+	}
+	public void consume() throws InterruptedException {
+		Thread.sleep(2000);
+	}
+
+}

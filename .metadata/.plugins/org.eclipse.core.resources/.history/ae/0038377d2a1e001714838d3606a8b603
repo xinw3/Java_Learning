@@ -1,0 +1,16 @@
+package threadSafe;
+
+public class WaitNotifyProcessor {
+
+	public void produce() {
+		synchronized(this) {
+			System.out.println("Producer thread running...");
+			wait();
+			wait();
+		}
+	}
+	public void consume() throws InterruptedException {
+		Thread.sleep(2000);
+	}
+
+}

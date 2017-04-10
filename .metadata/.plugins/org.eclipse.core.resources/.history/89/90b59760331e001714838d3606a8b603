@@ -1,0 +1,29 @@
+package threadSafe;
+
+public class WaitNotifyApp {
+
+	final WaitNotifyProcessor processor = new WaitNotifyProcessor();
+	
+	Thread t1 = new Thread(new Runnable(){
+		public void run() {
+			try {
+				processor.produce();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	});
+	
+	Thread t1 = new Thread(new Runnable() {
+		
+		public void run() {
+			processor.consume();
+		}
+	});
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
