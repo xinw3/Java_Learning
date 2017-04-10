@@ -6,7 +6,6 @@ import java.util.concurrent.Executors;
 /**
  * CountDownLatch 
  * thread-safe
- * 
  * @author xinwang
  *
  */

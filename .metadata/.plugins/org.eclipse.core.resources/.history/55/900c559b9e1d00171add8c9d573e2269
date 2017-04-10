@@ -1,0 +1,17 @@
+package threadSafe;
+/**
+ * Producer Consumer, Blocking queue
+ * 
+ * @author xinwang
+ *
+ */
+public class ProdConsApp {
+	
+	private BlockingQueue queue = new ArrayBlockingQueue(10);
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

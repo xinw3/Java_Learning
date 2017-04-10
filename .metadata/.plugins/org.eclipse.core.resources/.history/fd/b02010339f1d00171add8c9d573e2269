@@ -1,0 +1,21 @@
+package threadSafe;
+
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
+
+/**
+ * Producer Consumer, Blocking queue
+ * 
+ * @author xinwang
+ *
+ */
+public class ProdConsApp {
+	
+	private BlockingQueue<Integer> queue = new ArrayBlockingQueue<Integer>(10);
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
