@@ -1,0 +1,15 @@
+package exercises;
+
+public class DeadlockRunner {
+
+	public void firstThread() {
+		
+	}
+	public void secondThread() {
+		
+	}
+	public void finished() {
+		
+	}
+
+}
