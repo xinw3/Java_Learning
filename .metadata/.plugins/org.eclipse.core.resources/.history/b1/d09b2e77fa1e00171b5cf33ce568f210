@@ -7,23 +7,13 @@ public class App {
 		
 		Thread t1 = new Thread(new Runnable() {
 			public void run() {
-				try {
-					runner.firstThread();
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+				runner.firstThread();
 			}
 		});
 		
 		Thread t2 = new Thread(new Runnable() {
 			public void run() {
-				try {
-					runner.secondThread();
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+				runner.secondThread();
 			}
 		});
 		

@@ -24,8 +24,7 @@ public class DeadlockRunner {
 				if (gotFirstLock && gotSecondLock) {
 					return;
 				}
-
-				// only happening when the thread doesn't get both locks.
+				
 				if (gotFirstLock) {
 					firstLock.unlock();
 				}

@@ -11,7 +11,7 @@ public class DeadlockRunner {
 	private Lock lock1 = new ReentrantLock();
 	private Lock lock2 = new ReentrantLock();
 	
-	private void acquireLocks(Lock firstLock, Lock secondLock) throws InterruptedException {
+	private void acquireLocks(Lock firstLock, Lock secondLock) {
 		while (true) {
 			// Acquire locks
 			boolean gotFirstLock = false;
@@ -24,8 +24,7 @@ public class DeadlockRunner {
 				if (gotFirstLock && gotSecondLock) {
 					return;
 				}
-
-				// only happening when the thread doesn't get both locks.
+				
 				if (gotFirstLock) {
 					firstLock.unlock();
 				}
@@ -39,11 +38,12 @@ public class DeadlockRunner {
 		}
 	}
 
-	public void firstThread() throws InterruptedException {
+	public void firstThread() {
 		Random random = new Random();
 		
 		for (int i = 0; i < 10000; i++) {
-			acquireLocks(lock1, lock2);
+			lock1.lock();
+			lock2.lock();
 			try {
 				Account.transfer(acc1, acc2, random.nextInt(100));
 			} finally {
@@ -52,11 +52,12 @@ public class DeadlockRunner {
 			}
 		}
 	}
-	public void secondThread() throws InterruptedException {
+	public void secondThread() {
 		Random random = new Random();
 		
 		for (int i = 0; i < 10000; i++) {
-			acquireLocks(lock2, lock1);
+			lock2.lock();
+			lock1.lock();
 			
 			try {
 				Account.transfer(acc2, acc1, random.nextInt(100));
