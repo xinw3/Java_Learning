@@ -1,0 +1,13 @@
+package threadSafe;
+
+public class ProdConsProcessor {
+
+	private LinkedList<Integer> list = new LinkedList<Integer>();
+	private final int LIMIT = 10;
+	private Object lock = new Object();
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

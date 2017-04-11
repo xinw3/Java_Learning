@@ -1,0 +1,12 @@
+package threadSafe;
+
+public class ProdConsApp {
+
+	
+	
+	public static void main(String[] args) {
+		final ProdConsProcessor processor = new ProdConsProcessor();
+		
+	}
+
+}

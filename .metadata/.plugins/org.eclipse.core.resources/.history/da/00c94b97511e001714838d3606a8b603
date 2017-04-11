@@ -4,7 +4,7 @@ public class ProdConsApp {
 
 	
 	
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) {
 		final ProdConsProcessor processor = new ProdConsProcessor();
 		
 		Thread t1 = new Thread(new Runnable() {

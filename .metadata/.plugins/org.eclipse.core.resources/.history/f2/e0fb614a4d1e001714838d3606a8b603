@@ -1,0 +1,36 @@
+package threadSafe;
+
+import java.util.LinkedList;
+import java.util.Random;
+
+public class ProdConsProcessor {
+
+	private LinkedList<Integer> list = new LinkedList<Integer>();
+	private final int LIMIT = 10;
+	private Object lock = new Object();
+	
+	public void produce() {
+		int value = 0;
+		
+		while (true) {
+			synchronized (lock) {
+				list.add(value++);
+			}
+		}
+	}
+	
+	public void consume() {
+		Random random = new Random();
+		while (true) {
+			synchronized(lock) {
+				System.out.print("List size is: " + list.size());
+				int value = list.removeFirst();
+				System.out.println("; value is: " + value);
+				lock.notify();
+			}
+			
+			Thread.sleep(random);
+		}
+	}
+
+}
