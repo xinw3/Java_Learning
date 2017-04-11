@@ -1,0 +1,12 @@
+package exercises;
+
+import java.util.concurrent.Executors;
+
+public class CallApp {
+
+	public static void main(String[] args) {
+		ExecutorService executor = Executors.newCachedThreadPool();
+
+	}
+
+}
