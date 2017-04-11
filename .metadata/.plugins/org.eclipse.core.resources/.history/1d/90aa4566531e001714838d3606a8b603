@@ -1,0 +1,24 @@
+package exercises;
+
+public class Runner {
+
+	private int count = 0;
+	
+	private void increment() {
+		for (int i = 0; i < 10000; i++) {
+			count++;
+		}
+	}
+	public void firstThread() {
+		
+	}
+	
+	public void secondThread() {
+		
+	}
+	
+	public void finished() {
+		
+	}
+
+}

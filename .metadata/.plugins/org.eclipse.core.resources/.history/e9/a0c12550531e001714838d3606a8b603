@@ -1,0 +1,17 @@
+package exercises;
+
+public class Runner {
+
+	public void firstThread() {
+		
+	}
+	
+	public void secondThread() {
+		
+	}
+	
+	public void finished() {
+		
+	}
+
+}

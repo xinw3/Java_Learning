@@ -1,0 +1,15 @@
+package exercises;
+
+public class ReentrantLock {
+
+	public static void main(String[] args) {
+		final Runner = new Runner();
+		
+		Thread t1 = new Thread();
+		public void run() {
+			runner.firstThread();
+		}
+
+	}
+
+}
