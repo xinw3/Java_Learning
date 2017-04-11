@@ -1,0 +1,15 @@
+package exercises;
+
+import java.util.concurrent.Semaphore;
+
+public class SemApp {
+
+	public static void main(String[] args) {
+		
+		Semaphore sem = new Semaphore(1);
+		
+		System.out.println("Available permits: " + sem.availablePermits());
+
+	}
+
+}

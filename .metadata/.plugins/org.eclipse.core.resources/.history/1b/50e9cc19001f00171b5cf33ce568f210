@@ -1,0 +1,18 @@
+package exercises;
+
+import java.util.concurrent.Semaphore;
+
+public class SemApp {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		Semaphore sem = new Semaphore(1);
+		
+		sem.release();
+		sem.acquire();
+		
+		System.out.println("Available permits: " + sem.availablePermits());
+
+	}
+
+}
