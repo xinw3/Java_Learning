@@ -66,9 +66,6 @@ public class Event {
 	/*
 	 *  Multi-threading version 2
 	 *  Using mutex to control the access of the resources.
-	 *  Semaphore just control the access to a certain resource
-	 *  but there is another problem that semaphore can release permit
-	 *  more than the declared permits. 
 	 */
 	public void register(Callback cb) {
 		mutex.acquire();
@@ -89,7 +86,6 @@ public class Event {
 				mutex.release();
 				cb.invoke();
 			}
-			mutex.acquire();
 			fired = true;
 			mutex.release();
 		
