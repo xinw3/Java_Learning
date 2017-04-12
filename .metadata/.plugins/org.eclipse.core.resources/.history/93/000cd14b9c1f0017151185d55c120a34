@@ -87,7 +87,6 @@ public class Event {
 				cb.invoke();
 			}
 			fired = true;
-			mutex.release();
 		
 	}
 	public static void main(String[] args) {

@@ -29,6 +29,6 @@ public class SemApp {
 //		sem.release();
 //		System.out.println("Available permits " + sem.availablePermits());
 //		sem.release();
-//		System.out.println("Available permits " + sem.availablePermits());
+		System.out.println("Available permits " + sem.availablePermits());
 	}
 }

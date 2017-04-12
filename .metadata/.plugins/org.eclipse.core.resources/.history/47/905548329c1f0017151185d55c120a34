@@ -80,14 +80,13 @@ public class Event {
 	}
 	
 	public void fire() {
-		mutex.acquire();
+		synchronized(lock) {
 			while (!queue.isEmpty()) {
 				Callback cb = queue.poll();
-				mutex.release();
 				cb.invoke();
 			}
 			fired = true;
-			mutex.release();
+		}
 		
 	}
 	public static void main(String[] args) {
