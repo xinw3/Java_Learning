@@ -94,8 +94,8 @@ public class Event {
 				Callback cb = queue.poll();
 				mutex.release();
 				cb.invoke();
-				mutex.acqurie();
 			}
+			mutex.acquire();
 			fired = true;
 			mutex.release();
 		
@@ -126,8 +126,8 @@ public class Event {
 				Callback cb = queue.poll();
 				lock.unlock();
 				cb.invoke();
-				lock.lock();
 			}
+			lock.lock();
 			fired = true;
 			mutex.unlock();
 		

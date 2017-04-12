@@ -96,6 +96,7 @@ public class Event {
 				cb.invoke();
 				mutex.acqurie();
 			}
+			mutex.acquire();
 			fired = true;
 			mutex.release();
 		
