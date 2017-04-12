@@ -1,0 +1,11 @@
+package cloudera;
+
+public class Account {
+
+	private int balance = 0;
+	
+	public void deposit(int amount) {
+		balance += amount;
+	}
+
+}

@@ -16,7 +16,7 @@ public class DeadlockRunner {
 			// Acquire locks
 			boolean gotFirstLock = false;
 			boolean gotSecondLock = false;
-
+			
 			try {
 				gotFirstLock = firstLock.tryLock();
 				gotSecondLock = secondLock.tryLock();

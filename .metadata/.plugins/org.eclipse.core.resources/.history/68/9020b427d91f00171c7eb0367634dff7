@@ -24,9 +24,5 @@ public class Account {
 		acc1.withdraw(amount);
 		acc2.deposit(amount);
 	}
-	
-	public int getBalance() {
-		return balance;
-	}
 
 }
