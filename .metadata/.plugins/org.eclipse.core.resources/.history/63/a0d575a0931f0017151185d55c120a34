@@ -1,0 +1,51 @@
+package purestorage;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+import javax.security.auth.callback.Callback;
+
+public class Event {
+	
+	boolean fired = false;
+	Queue<Callback> queue = new LinkedList<Callback>();
+	
+	public class Event {
+		
+	}
+	/*
+	 *  Sequential version
+	 */
+	public void register(Callback cb) {
+		if (!fired) {
+			queue.offer(cb);
+		} else {
+			cb.invoke();
+		}
+	}
+	
+	public void fire() {
+		while(!queue.isEmpty()) {
+			Callback cb = queue.poll();
+			cb.invoke();
+		}
+		fired = true;
+	}
+	
+	/*
+	 *  Multi-threading version
+	 */
+	public void register(Callback cb) {
+		
+	}
+	
+	public void fire() {
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

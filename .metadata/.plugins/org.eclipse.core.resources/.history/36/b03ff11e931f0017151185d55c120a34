@@ -1,0 +1,37 @@
+package purestorage;
+
+public class CallbackMechanism {
+	
+	boolean fired = false;
+	Queue<Callback> queue = new LinkedList<Callback>();
+	public class Event {
+		
+	}
+	/*
+	 *  Sequential version
+	 */
+	public void register(Callback cb) {
+		
+	}
+	
+	public void fire() {
+		
+	}
+	
+//	/*
+//	 *  Multi-threading version
+//	 */
+//	public void register(Callback cb) {
+//		
+//	}
+//	
+//	public void fire() {
+//		
+//	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
