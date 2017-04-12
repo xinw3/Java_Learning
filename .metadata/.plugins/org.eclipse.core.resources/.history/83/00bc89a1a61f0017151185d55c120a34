@@ -106,7 +106,7 @@ public class Event {
 	 *  Using reentrant lock
 	 *  it is not the same as the mutex because it allows one
 	 *  thread access the same resources more than once.
-	 *  but I think it is applicable for this situation.
+	 *  but I think it is applicable for this situation
 	 */
 	public void register(Callback cb) {
 		lock.lock();

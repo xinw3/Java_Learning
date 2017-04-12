@@ -104,32 +104,29 @@ public class Event {
 	/*
 	 *  Multi-threading version 3
 	 *  Using reentrant lock
-	 *  it is not the same as the mutex because it allows one
-	 *  thread access the same resources more than once.
-	 *  but I think it is applicable for this situation.
 	 */
 	public void register(Callback cb) {
 		lock.lock();
 			if (fired) {
 				queue.offer(cb);
-				lock.unlock();
+				mutex.release();
 			} else {
-				lock.unlock();
+				mutex.release();
 				cb.invoke();
 			}
 		
 	}
 	
 	public void fire() {
-		lock.lock();
+		mutex.acquire();
 			while (!queue.isEmpty()) {
 				Callback cb = queue.poll();
-				lock.unlock();
+				mutex.release();
 				cb.invoke();
 			}
-			lock.lock();
+			mutex.acquire();
 			fired = true;
-			mutex.unlock();
+			mutex.release();
 		
 	}
 	public static void main(String[] args) {
