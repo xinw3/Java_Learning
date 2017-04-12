@@ -1,0 +1,52 @@
+package purestorage;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class DrawCircle {
+	
+	public class Point {
+		int x , y;
+		public Point(int x_val, int y_val) {
+			x = x_val;
+			y = y_val;
+		}
+	}
+
+	public Set<Point> getPoint(int radius) {
+		Set<Point> set = new HashSet<Point>();
+		int rSquare = radius * radius;
+		
+		int x = 1;
+		int y = 0;
+		
+		while (x * x <= rSquare) {
+			int y_start = 0;
+			int y_end = x;
+			while (y_start <= y_end) {
+				int y_mid = y_start + (y_end - y_start) / 2;
+				int curr = x * x + y_mid * y_mid;
+				if (curr == rSquare) {
+					set.add(new Point(x, y_mid));
+					set.add(new Point(x, -1 * y_mid));
+					set.add(new Point(-1 * x, y_mid));
+					set.add(new Point(-1 * x, -1 * y_mid));
+					set.add(new Point(y_mid, x));
+					set.add(new Point(y_mid, -1 * x));
+					set.add(new Point(-1 * y_mid, x));
+					set.add(new Point(-1 * y_mid, -1 * x));
+				} else if (curr < rSquare) {
+					y_start = y_mid + 1;
+				} else {
+					y_end = y_mid - 1;
+				}
+			}
+		}
+	}
+	public static void main(String[] args) {
+		
+		
+
+	}
+
+}

@@ -1,0 +1,27 @@
+package purestorage;
+
+import java.util.Set;
+
+public class DrawCircle {
+
+	public Set<Integer> getPoint(int radius) {
+		int rSquare = radius * radius;
+		
+		int x = 1;
+		int y = 0;
+		
+		while (x * x <= rSquare) {
+			int y_start = 0;
+			int y_end = x;
+			while (y_start <= y_end) {
+				int y_mid = y_start + (y_end - y_start) / 2;
+			}
+		}
+	}
+	public static void main(String[] args) {
+		
+		
+
+	}
+
+}
