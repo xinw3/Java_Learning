@@ -311,3 +311,34 @@ Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.
 
 !ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2017-04-12 13:07:19.573
 !MESSAGE No repository found at http://aws.amazon.com/java.
+!SESSION 2017-04-12 18:41:21.965 -----------------------------------------------
+eclipse.buildId=4.6.0.I20160606-1100
+java.version=1.8.0_102
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/xinwang/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.jee.product -keyring /Users/xinwang/.eclipse_keyring
+
+!ENTRY org.eclipse.core.net 1 0 2017-04-12 18:41:31.407
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2017-04-12 18:41:36.981
+!MESSAGE Starting the AWS toolkit core plugin...
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2017-04-12 18:41:39.514
+!MESSAGE Monitoring content of /Users/xinwang/.aws/credentials
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2017-04-12 18:41:39.659
+!MESSAGE AWS toolkit core plugin initialized after 2681 milliseconds.
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2017-04-12 18:41:39.688
+!MESSAGE Found valid identity id cache us-east-1:ba1e52a3-a47c-4179-8fd7-44492b4e2f8c
+
+!ENTRY WACommon 4 0 2017-04-12 18:41:43.239
+!MESSAGE Plugin folder path:/Applications/Eclipse.app/Contents/Eclipse/../../../../Users/xinwang/.p2/pool/plugins
+
+!ENTRY org.eclipse.jface.text 2 0 2017-04-12 18:47:15.730
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2017-04-12 18:47:15.734
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'

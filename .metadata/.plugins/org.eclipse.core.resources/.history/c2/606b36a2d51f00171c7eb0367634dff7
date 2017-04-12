@@ -24,6 +24,7 @@ public class DeadlockRunner {
 				if (gotFirstLock && gotSecondLock) {
 					return;
 				}
+
 				// only happening when the thread doesn't get both locks.
 				if (gotFirstLock) {
 					firstLock.unlock();
@@ -32,6 +33,7 @@ public class DeadlockRunner {
 					secondLock.unlock();
 				}
 			}
+			
 			// Locks not acquired
 			Thread.sleep(1);
 		}
