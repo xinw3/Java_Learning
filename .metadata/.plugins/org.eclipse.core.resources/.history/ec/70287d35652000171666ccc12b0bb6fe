@@ -24,7 +24,6 @@ public class BST<T> {
 		Stack<TreeNode<T>> stack = new Stack<TreeNode<T>>();
 		while (root != null) {
 			stack.push(root);
-			root = root.left;
 		}
 		while (!stack.isEmpty()) {
 			TreeNode<T> curr = stack.pop();
@@ -48,8 +47,7 @@ public class BST<T> {
         root.left.right = new TreeNode<Integer>(4);
         root.right.left = new TreeNode<Integer>(7);
           
-        //tree.RecTraversal(root);
-        tree.BSTIterator(root);
+        tree.RecTraversal(root);
 
 	}
 

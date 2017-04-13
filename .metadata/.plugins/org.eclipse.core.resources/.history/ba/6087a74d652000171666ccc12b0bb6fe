@@ -24,7 +24,6 @@ public class BST<T> {
 		Stack<TreeNode<T>> stack = new Stack<TreeNode<T>>();
 		while (root != null) {
 			stack.push(root);
-			root = root.left;
 		}
 		while (!stack.isEmpty()) {
 			TreeNode<T> curr = stack.pop();
