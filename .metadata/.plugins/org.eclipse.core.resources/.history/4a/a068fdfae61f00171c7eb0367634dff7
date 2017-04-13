@@ -8,7 +8,7 @@ public class Account {
 		name = n;
 	}
 	
-	public synchronized void deposit(int amount) {
+	public void deposit(int amount) {
 		balance += amount;
 //		if (balance > 1000000) {
 //			System.out.println("Hi " + name + ", Your balance cannot be over 1000000");
@@ -17,7 +17,7 @@ public class Account {
 //		}
 	}
 	
-	public synchronized void withdraw(int amount) {
+	public void withdraw(int amount) {
 		balance -= amount;
 //		if (balance < 0) {
 //			System.out.println("Hi " + name + ", Your balnace is not enough.");
