@@ -21,7 +21,7 @@ public class Account {
 	public void withdraw(int amount) {
 		balance -= amount;
 		if (balance < 0) {
-			System.out.println("Hi " + name + ", Your balnace is not enough.");
+			System.out.println("Hi " + name + ", You hava no balance in your account.");
 			balance += amount;
 			return;
 		}
