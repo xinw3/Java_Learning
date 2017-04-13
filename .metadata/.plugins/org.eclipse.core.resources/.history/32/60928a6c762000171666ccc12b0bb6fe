@@ -1,0 +1,37 @@
+package cloudera;
+
+public class ArrayQueue<T> {
+	
+	public ArrayQueue() {
+		
+	}
+	
+	public void enqueue(T item) {
+		
+	}
+	
+	public T dequeue() {
+		
+	}
+	
+	public T peekFront() {
+		
+	}
+	
+	public boolean isEmpty() {
+		
+	}
+	
+	private boolean isFull() {
+		
+	}
+	
+	
+	
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

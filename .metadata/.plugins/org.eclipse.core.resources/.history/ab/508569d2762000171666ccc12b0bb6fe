@@ -1,0 +1,52 @@
+package cloudera;
+
+public class ArrayQueue<T> {
+	
+	private Object[] elements;
+	
+	private static final int DEFAULT_CAPACITY = 6;
+	
+	private int front, back, nItems;
+	
+	public ArrayQueue() {
+		elements = new Object[DEFAULT_CAPACITY];
+		front = 0;
+		back = -1;
+		nItems = 0;
+	}
+	
+	public void enqueue(T item) {
+		if (isFull()) {
+			throw new RuntimeException("Queue is full.");
+		}
+		
+		back++;
+		elements[back % elements.length] = item;
+		nItems++;
+	}
+	
+	public T dequeue() {
+		
+	}
+	
+	public T peekFront() {
+		
+	}
+	
+	public boolean isEmpty() {
+		
+	}
+	
+	private boolean isFull() {
+		
+	}
+	
+	
+	
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

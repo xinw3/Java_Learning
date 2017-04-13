@@ -1,0 +1,67 @@
+package cloudera;
+
+import java.util.NoSuchElementException;
+
+public class ArrayQueue<T> {
+	
+	private Object[] elements;
+	
+	private static final int DEFAULT_CAPACITY = 6;
+	
+	private int front, back, nItems;
+	
+	public ArrayQueue() {
+		elements = new Object[DEFAULT_CAPACITY];
+		front = 0;
+		back = -1;
+		nItems = 0;
+	}
+	
+	public void enqueue(T item) {
+		if (isFull()) {
+			throw new RuntimeException("Queue is full.");
+		}
+		
+		back++;
+		elements[back % elements.length] = item;
+		nItems++;
+	}
+	
+	public T dequeue() {
+		if (isEmpty()) {
+			throw new NoSuchElementException();
+		}
+		
+		int index = front % elements.length;
+		T item = (T) elements[index];
+		elements[index] = null;
+		front++;
+		nItems--;
+		return item;
+	}
+	
+	public T peekFront() {
+		if (isEmpty()) {
+			throw new NoSuchElementException();
+		}
+		return (T) elements[front % elements.length];
+		
+	}
+	
+	public boolean isEmpty() {
+		return nItems == 0;
+	}
+	
+	private boolean isFull() {
+		return nItems == elements.length;
+	}
+	
+	
+	
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}
