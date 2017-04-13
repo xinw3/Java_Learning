@@ -1,0 +1,12 @@
+package cloudera;
+
+public class AccountApp {
+
+	/*
+	 * Simple sequential version
+	 */
+	public static void main(String[] args) {
+		
+	}
+
+}

@@ -1,0 +1,15 @@
+package cloudera;
+
+public class AccountApp {
+
+	/*
+	 * Simple sequential version
+	 */
+	public static void main(String[] args) {
+		Account acc1 = new Account();
+		Account acc2 = new Account();
+		acc1.deposit(1000);
+		acc2.deposit(1000);
+	}
+
+}
