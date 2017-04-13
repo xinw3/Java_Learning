@@ -17,8 +17,7 @@ public class Account {
 		hasBalance = lock.newCondition();
 	}
 	
-	// remember to unlock before return 
-	// or else there would
+	// remember to unlock before return or else there would
 	// be threads hang up.
 	public void deposit(int amount) {
 		lock.lock();
@@ -45,7 +44,7 @@ public class Account {
 			balance -= amount;
 			
 			if (balance < 0) {
-				System.out.println("balnace is not enough.");
+				System.out.println("Hi " + name + ", Your balnace is not enough.");
 				balance += amount;
 				lock.unlock();
 				return;

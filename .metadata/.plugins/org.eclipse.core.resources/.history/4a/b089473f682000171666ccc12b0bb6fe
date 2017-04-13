@@ -17,8 +17,7 @@ public class Account {
 		hasBalance = lock.newCondition();
 	}
 	
-	// remember to unlock before return 
-	// or else there would
+	// remember to unlock before return or else there would
 	// be threads hang up.
 	public void deposit(int amount) {
 		lock.lock();

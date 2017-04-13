@@ -47,7 +47,7 @@ public class BST<T> {
         root.left.left = new TreeNode<Integer>(1);
         root.left.right = new TreeNode<Integer>(4);
         root.right.left = new TreeNode<Integer>(7);
-
+          
         //tree.RecTraversal(root);
         tree.BSTIterator(root);
 
