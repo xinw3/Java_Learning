@@ -348,3 +348,40 @@ Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.
 
 !ENTRY org.eclipse.jface.text 2 0 2017-04-12 19:33:57.433
 !MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+!SESSION 2017-04-13 11:04:24.296 -----------------------------------------------
+eclipse.buildId=4.6.0.I20160606-1100
+java.version=1.8.0_102
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/xinwang/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.jee.product -keyring /Users/xinwang/.eclipse_keyring
+
+!ENTRY org.eclipse.core.net 1 0 2017-04-13 11:04:35.701
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2017-04-13 11:04:44.359
+!MESSAGE Starting the AWS toolkit core plugin...
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2017-04-13 11:04:46.644
+!MESSAGE Monitoring content of /Users/xinwang/.aws/credentials
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2017-04-13 11:04:46.823
+!MESSAGE AWS toolkit core plugin initialized after 2465 milliseconds.
+
+!ENTRY com.amazonaws.eclipse.core 1 0 2017-04-13 11:04:46.836
+!MESSAGE Found valid identity id cache us-east-1:ba1e52a3-a47c-4179-8fd7-44492b4e2f8c
+
+!ENTRY WACommon 4 0 2017-04-13 11:04:54.911
+!MESSAGE Plugin folder path:/Applications/Eclipse.app/Contents/Eclipse/../../../../Users/xinwang/.p2/pool/plugins
+
+!ENTRY org.eclipse.jface.text 2 0 2017-04-13 11:06:27.048
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2017-04-13 11:06:27.049
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.eclipse.jface.text 2 0 2017-04-13 11:15:52.439
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2017-04-13 11:15:52.441
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'

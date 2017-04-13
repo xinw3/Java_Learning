@@ -1,0 +1,18 @@
+package cloudera;
+
+public class BST {
+
+	public class TreeNode<T> {
+		T val;
+		TreeNode<T> root, left, right;
+		
+	}
+	public void RecTraversal(TreeNode root) {
+		
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

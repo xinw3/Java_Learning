@@ -7,7 +7,6 @@
 <fullyQualifiedTypeName name="java.util.concurrent.Executor"/>
 <fullyQualifiedTypeName name="java.util.concurrent.BlockingQueue"/>
 <fullyQualifiedTypeName name="java.util.concurrent.ArrayBlockingQueue"/>
-<fullyQualifiedTypeName name="java.util.concurrent.locks.Condition"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="java.util.concurrent.TimeUnit"/>
 <fullyQualifiedTypeName name="java.util.concurrent.Executors"/>
@@ -20,8 +19,9 @@
 <fullyQualifiedTypeName name="java.util.LinkedList"/>
 <fullyQualifiedTypeName name="javax.security.auth.callback.Callback"/>
 <fullyQualifiedTypeName name="java.util.concurrent.Semaphore"/>
-<fullyQualifiedTypeName name="java.util.concurrent.locks.Lock"/>
-<fullyQualifiedTypeName name="java.util.concurrent.locks.ReentrantLock"/>
 <fullyQualifiedTypeName name="java.util.Set"/>
 <fullyQualifiedTypeName name="java.util.HashSet"/>
+<fullyQualifiedTypeName name="java.util.concurrent.locks.ReentrantLock"/>
+<fullyQualifiedTypeName name="java.util.concurrent.locks.Lock"/>
+<fullyQualifiedTypeName name="java.util.concurrent.locks.Condition"/>
 </qualifiedTypeNameHistroy>

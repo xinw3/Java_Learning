@@ -1,0 +1,28 @@
+package cloudera;
+
+public class BST {
+
+	public class TreeNode<T> {
+		T val;
+		TreeNode<T> left, right;
+		public TreeNode (T value) {
+			val = value;
+			left = null;
+			right = null;
+		}
+	}
+	public T RecTraversal(TreeNode root) {
+		if(root != null) {
+			T left = RecTraversal(root.left);
+			T value = root.val;
+			T right = RecTraversal(root.right);
+			
+		}
+		return value;
+	}
+	public static void main(String[] args) {
+		
+
+	}
+
+}
