@@ -35,7 +35,7 @@ public class ArrayQueue<T> {
 			back++;
 			elements[back % elements.length] = item;
 			nItems++;
-			notEmpty.signalAll();
+			notEmpty.signal();
 		} finally {
 			lock.unlock();
 		}
@@ -43,29 +43,22 @@ public class ArrayQueue<T> {
 		
 	}
 	
-	public T dequeue() throws InterruptedException {
+	public synchronized T dequeue() throws InterruptedException {
 		if (isEmpty()) {
 			notEmpty.await();
 		}
-		lock.lock();
-		try {
-			int index = front % elements.length;
-			@SuppressWarnings("unchecked")
-			T item = (T) elements[index];
-			elements[index] = null;
-			front++;
-			nItems--;
-			notFull.signalAll();
-			return item;
-		} finally {
-			lock.unlock();
-		}
+		
+		int index = front % elements.length;
+		T item = (T) elements[index];
+		elements[index] = null;
+		front++;
+		nItems--;
+		return item;
 	}
 	
-	@SuppressWarnings("unchecked")
-	public T peekFront() throws InterruptedException {
+	public T peekFront() {
 		if (isEmpty()) {
-			notEmpty.await();
+			throw new NoSuchElementException();
 		}
 		return (T) elements[front % elements.length];
 		
@@ -94,7 +87,7 @@ public class ArrayQueue<T> {
         System.out.println(queue.dequeue()); // 3
         System.out.println(queue.peekFront()); // 2
         queue.enqueue(9);
-        //queue.enqueue(11); // exception (Queue is full)
+        queue.enqueue(11); // exception (Queue is full)
 	}
 
 }

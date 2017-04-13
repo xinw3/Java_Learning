@@ -28,44 +28,36 @@ public class ArrayQueue<T> {
 	
 	public synchronized void enqueue(T item) throws InterruptedException {
 		if (isFull()) {
-			notFull.await();
-		}
-		lock.lock();
-		try {
-			back++;
-			elements[back % elements.length] = item;
-			nItems++;
-			notEmpty.signalAll();
-		} finally {
-			lock.unlock();
+			notFull.wait();
 		}
 		
+		back++;
+		elements[back % elements.length] = item;
+		nItems++;
+		notEmpty().signal();
+	}
+	
+	public synchronized T dequeue() {
+		if (isEmpty()) {
+			try {
+				wait();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 		
+		int index = front % elements.length;
+		T item = (T) elements[index];
+		elements[index] = null;
+		front++;
+		nItems--;
+		return item;
 	}
 	
-	public T dequeue() throws InterruptedException {
+	public T peekFront() {
 		if (isEmpty()) {
-			notEmpty.await();
-		}
-		lock.lock();
-		try {
-			int index = front % elements.length;
-			@SuppressWarnings("unchecked")
-			T item = (T) elements[index];
-			elements[index] = null;
-			front++;
-			nItems--;
-			notFull.signalAll();
-			return item;
-		} finally {
-			lock.unlock();
-		}
-	}
-	
-	@SuppressWarnings("unchecked")
-	public T peekFront() throws InterruptedException {
-		if (isEmpty()) {
-			notEmpty.await();
+			throw new NoSuchElementException();
 		}
 		return (T) elements[front % elements.length];
 		
@@ -94,7 +86,7 @@ public class ArrayQueue<T> {
         System.out.println(queue.dequeue()); // 3
         System.out.println(queue.peekFront()); // 2
         queue.enqueue(9);
-        //queue.enqueue(11); // exception (Queue is full)
+        queue.enqueue(11); // exception (Queue is full)
 	}
 
 }
