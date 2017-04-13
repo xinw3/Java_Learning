@@ -7,14 +7,14 @@ public class AccountApp {
 		Account acc2 = new Account("Wang");
 		Thread t1 = new Thread(new Runnable() {
 			public void run() {
-				for (int i = 0; i < 10000; i++) {
+				for (int i = 0; i < 10; i++) {
 					acc.deposit(1000);
 				}
 			}
 		});
 		Thread t2 = new Thread(new Runnable() {
 			public void run() {
-				for (int i = 0; i < 10000; i++) {
+				for (int i = 0; i < 10; i++) {
 					acc.withdraw(1000);
 				}
 			}
