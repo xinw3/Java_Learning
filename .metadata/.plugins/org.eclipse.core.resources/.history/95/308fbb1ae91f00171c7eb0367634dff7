@@ -15,9 +15,6 @@ public class AccountApp {
 		});
 		Thread t2 = new Thread(new Runnable() {
 			public void run() {
-				// we have to let withdraw wait for seconds
-				// or else the balance is not correct because
-				// we add the condition
 				try {
 					Thread.sleep(10);
 				} catch (InterruptedException e) {

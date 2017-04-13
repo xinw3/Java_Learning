@@ -12,8 +12,7 @@ public class Account {
 		name = n;
 	}
 	
-	// remember to unlock before return or else there would
-	// be threads hang up.
+	// remember to unlock before return
 	public void deposit(int amount) {
 		lock.lock();
 		balance += amount;

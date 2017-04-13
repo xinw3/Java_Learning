@@ -3,29 +3,19 @@ package cloudera;
 public class AccountApp {
 
 	public static void main(String[] args) throws InterruptedException {
-
 		Account acc = new Account("Xin");
 		Account acc2 = new Account("Wang");
 		Thread t1 = new Thread(new Runnable() {
 			public void run() {
 				for (int i = 0; i < 10000; i++) {
-					acc.deposit(100);
+					acc.deposit(1000);
 				}
 			}
 		});
 		Thread t2 = new Thread(new Runnable() {
 			public void run() {
-				// we have to let withdraw wait for seconds
-				// or else the balance is not correct because
-				// we add the condition
-				try {
-					Thread.sleep(10);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
 				for (int i = 0; i < 10000; i++) {
-					acc.withdraw(100);
+					acc.withdraw(1000);
 				}
 			}
 		});
