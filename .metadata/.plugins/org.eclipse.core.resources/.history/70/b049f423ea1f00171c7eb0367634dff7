@@ -11,7 +11,7 @@ public class AccountApp {
 		Thread t1 = new Thread(new Runnable() {
 			public void run() {
 				for (int i = 0; i < 10000; i++) {
-					acc1.transfer(acc2, 100);
+					acc1.deposit(100);
 				}
 			}
 		});
@@ -21,7 +21,7 @@ public class AccountApp {
 				// or else the balance is not correct because
 				// we add the condition
 				for (int i = 0; i < 10000; i++) {
-					acc2.transfer(acc1, 100);
+					acc1.transfer(acc2, 100);
 				}
 			}
 		});

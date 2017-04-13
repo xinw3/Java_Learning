@@ -38,9 +38,9 @@ public class Account {
 		lock.unlock();
 	}
 	
-	public void transfer(Account acc, int amount) {
-		this.withdraw(amount);
-		acc.deposit(amount);
+	public void transfer(Account acc1, Account acc2, int amount) {
+		acc1.withdraw(amount);
+		acc2.deposit(amount);
 	}
 	
 	public int getBalance() {
