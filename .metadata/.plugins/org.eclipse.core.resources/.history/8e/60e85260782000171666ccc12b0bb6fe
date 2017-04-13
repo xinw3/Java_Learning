@@ -15,25 +15,19 @@ public class ArrayQueue<T> {
 		nItems = 0;
 	}
 	
-	public synchronized void enqueue(T item) throws InterruptedException {
+	public synchronized void enqueue(T item) {
 		if (isFull()) {
-			wait();
+			throw new RuntimeException("Queue is full.");
 		}
 		
 		back++;
 		elements[back % elements.length] = item;
 		nItems++;
-		notifyAll();
 	}
 	
 	public synchronized T dequeue() {
 		if (isEmpty()) {
-			try {
-				wait();
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			throw new NoSuchElementException();
 		}
 		
 		int index = front % elements.length;
@@ -60,7 +54,7 @@ public class ArrayQueue<T> {
 		return nItems == elements.length;
 	}
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) {
 		ArrayQueue<Integer> queue = new ArrayQueue<Integer>();
         queue.enqueue(1);
         queue.enqueue(3);

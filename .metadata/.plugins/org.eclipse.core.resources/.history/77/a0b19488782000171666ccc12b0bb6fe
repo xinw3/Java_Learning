@@ -15,7 +15,7 @@ public class ArrayQueue<T> {
 		nItems = 0;
 	}
 	
-	public synchronized void enqueue(T item) throws InterruptedException {
+	public synchronized void enqueue(T item) {
 		if (isFull()) {
 			wait();
 		}
@@ -23,7 +23,6 @@ public class ArrayQueue<T> {
 		back++;
 		elements[back % elements.length] = item;
 		nItems++;
-		notifyAll();
 	}
 	
 	public synchronized T dequeue() {
@@ -60,7 +59,7 @@ public class ArrayQueue<T> {
 		return nItems == elements.length;
 	}
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) {
 		ArrayQueue<Integer> queue = new ArrayQueue<Integer>();
         queue.enqueue(1);
         queue.enqueue(3);

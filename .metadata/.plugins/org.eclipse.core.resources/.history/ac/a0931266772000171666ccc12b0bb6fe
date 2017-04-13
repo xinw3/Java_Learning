@@ -5,7 +5,9 @@ import java.util.NoSuchElementException;
 public class ArrayQueue<T> {
 	
 	private Object[] elements;
-	private static final int DEFAULT_CAPACITY = 6;	
+	
+	private static final int DEFAULT_CAPACITY = 6;
+	
 	private int front, back, nItems;
 	
 	public ArrayQueue() {
@@ -15,25 +17,19 @@ public class ArrayQueue<T> {
 		nItems = 0;
 	}
 	
-	public synchronized void enqueue(T item) throws InterruptedException {
+	public void enqueue(T item) {
 		if (isFull()) {
-			wait();
+			throw new RuntimeException("Queue is full.");
 		}
 		
 		back++;
 		elements[back % elements.length] = item;
 		nItems++;
-		notifyAll();
 	}
 	
-	public synchronized T dequeue() {
+	public T dequeue() {
 		if (isEmpty()) {
-			try {
-				wait();
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			throw new NoSuchElementException();
 		}
 		
 		int index = front % elements.length;
@@ -44,6 +40,7 @@ public class ArrayQueue<T> {
 		return item;
 	}
 	
+	@SuppressWarnings("unchecked")
 	public T peekFront() {
 		if (isEmpty()) {
 			throw new NoSuchElementException();
@@ -60,7 +57,7 @@ public class ArrayQueue<T> {
 		return nItems == elements.length;
 	}
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) {
 		ArrayQueue<Integer> queue = new ArrayQueue<Integer>();
         queue.enqueue(1);
         queue.enqueue(3);

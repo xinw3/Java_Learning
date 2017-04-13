@@ -60,7 +60,7 @@ public class ArrayQueue<T> {
 		return nItems == elements.length;
 	}
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) {
 		ArrayQueue<Integer> queue = new ArrayQueue<Integer>();
         queue.enqueue(1);
         queue.enqueue(3);
