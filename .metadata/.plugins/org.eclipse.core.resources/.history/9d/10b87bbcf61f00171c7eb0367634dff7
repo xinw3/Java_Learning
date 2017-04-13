@@ -35,11 +35,11 @@ public class Account {
 		}
 	}
 	
-	public void withdraw(int amount) throws InterruptedException {
+	public void withdraw(int amount) {
 		lock.lock();
 		try {
 			if (balance < amount) {
-				hasBalance.await();
+				hasBalance.a
 			}
 			balance -= amount;
 			
@@ -49,13 +49,14 @@ public class Account {
 				lock.unlock();
 				return;
 			}
+			lock.unlock();
 		} finally {
 			lock.unlock();
 		}
 		
 	}
 	
-	public void transfer(Account acc, int amount) throws InterruptedException {
+	public void transfer(Account acc, int amount) {
 		this.withdraw(amount);
 		acc.deposit(amount);
 	}

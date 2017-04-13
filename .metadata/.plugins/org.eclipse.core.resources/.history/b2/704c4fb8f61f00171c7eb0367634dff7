@@ -9,12 +9,12 @@ public class Account {
 	private int balance;
 	private String name;
 	private Lock lock;
-	private Condition hasBalance;
+	private Condition hasBalanceCondition;
 	public Account(String n) {
 		name = n;
 		balance = 0;
 		lock = new ReentrantLock();
-		hasBalance = lock.newCondition();
+		hasBalanceCondition = lock.newCondition();
 	}
 	
 	// remember to unlock before return or else there would
@@ -29,33 +29,30 @@ public class Account {
 				lock.unlock();
 				return;
 			}
-			hasBalance.signalAll();
+			hasBalanceCondition.signalAll();
 		} finally {
 			lock.unlock();
 		}
 	}
 	
-	public void withdraw(int amount) throws InterruptedException {
+	public void withdraw(int amount) {
 		lock.lock();
 		try {
-			if (balance < amount) {
-				hasBalance.await();
-			}
 			balance -= amount;
-			
 			if (balance < 0) {
 				System.out.println("Hi " + name + ", Your balnace is not enough.");
 				balance += amount;
 				lock.unlock();
 				return;
 			}
+			lock.unlock();
 		} finally {
 			lock.unlock();
 		}
 		
 	}
 	
-	public void transfer(Account acc, int amount) throws InterruptedException {
+	public void transfer(Account acc, int amount) {
 		this.withdraw(amount);
 		acc.deposit(amount);
 	}

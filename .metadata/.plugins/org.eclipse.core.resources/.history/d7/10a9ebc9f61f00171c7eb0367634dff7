@@ -49,13 +49,14 @@ public class Account {
 				lock.unlock();
 				return;
 			}
+			lock.unlock();
 		} finally {
 			lock.unlock();
 		}
 		
 	}
 	
-	public void transfer(Account acc, int amount) throws InterruptedException {
+	public void transfer(Account acc, int amount) {
 		this.withdraw(amount);
 		acc.deposit(amount);
 	}

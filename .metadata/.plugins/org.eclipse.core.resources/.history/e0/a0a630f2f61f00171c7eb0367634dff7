@@ -49,6 +49,7 @@ public class Account {
 				lock.unlock();
 				return;
 			}
+			lock.unlock();
 		} finally {
 			lock.unlock();
 		}

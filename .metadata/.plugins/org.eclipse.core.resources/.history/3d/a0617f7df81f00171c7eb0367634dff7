@@ -6,8 +6,8 @@ public class AccountApp {
 
 		Account acc1 = new Account("Xin");
 		Account acc2 = new Account("Wang");
-		//acc1.deposit(1000000);
-		//acc2.deposit(1000000);
+		acc1.deposit(1000000);
+		acc2.deposit(1000000);
 		Thread t1 = new Thread(new Runnable() {
 			public void run() {
 				for (int i = 0; i < 10000; i++) {
