@@ -85,9 +85,7 @@ public class DrawCircle {
 		}
 		return set;
 	}
-	/* time complexity: O(n^2) which is slower than the binary 
-	 * search version but their complexity is the same.
-	 */
+	/* time complexity: O(n^2)*/
 	public Set<Point> getPoints(int radius) {
 		Set<Point> set = new HashSet<Point>();
 		int rSquare = radius * radius;
@@ -97,7 +95,6 @@ public class DrawCircle {
 			for (int j = 0; j <= diameter; j++) {		
 				int y = j - radius;
 				if (x * x + y * y <= rSquare) {
-					//set.add(new Point(x, y));
 					addPoints(set, x, y);
 				}
 			}
@@ -108,14 +105,8 @@ public class DrawCircle {
 		
 		DrawCircle dc = new DrawCircle();
 		Set<Point> set = dc.getPoints_binary(3);
-		System.out.println("binary search version:");
+		
 		for (Point p : set) {
-			System.out.println("[" + p.x + ", " + p.y + "]");
-		}
-		System.out.println("\nfor loop version:");
-		Set<Point> set2 = dc.getPoints(3);
-		System.out.println("total points are: " + set2.size());
-		for (Point p : set2) {
 			System.out.println("[" + p.x + ", " + p.y + "]");
 		}
 	}

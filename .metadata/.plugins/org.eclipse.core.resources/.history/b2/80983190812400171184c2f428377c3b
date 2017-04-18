@@ -97,8 +97,7 @@ public class DrawCircle {
 			for (int j = 0; j <= diameter; j++) {		
 				int y = j - radius;
 				if (x * x + y * y <= rSquare) {
-					//set.add(new Point(x, y));
-					addPoints(set, x, y);
+					set.add(new Point(x, y));
 				}
 			}
 		}
@@ -114,7 +113,6 @@ public class DrawCircle {
 		}
 		System.out.println("\nfor loop version:");
 		Set<Point> set2 = dc.getPoints(3);
-		System.out.println("total points are: " + set2.size());
 		for (Point p : set2) {
 			System.out.println("[" + p.x + ", " + p.y + "]");
 		}
