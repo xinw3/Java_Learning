@@ -38,9 +38,7 @@ public class ArrayQueue<T> {
 			notEmpty.signalAll();
 		} finally {
 			lock.unlock();
-		}
-		
-		
+		}	
 	}
 	
 	public T dequeue() throws InterruptedException {

@@ -11,12 +11,31 @@ public class DrawCircle {
 			x = x_val;
 			y = y_val;
 		}
+		@Override
+		public boolean equals(Object other) {
+			if (other == this) {
+				return true;
+			}
+			if (other == null) {
+				return false;
+			}
+			if (getClass() != other.getClass()) {
+				return false;
+			}
+			Point point = (Point)other;
+			return point.x == x && point.y == y;
+		}
+
+		@Override
+		public int hashCode () {
+			return x;
+		}
 	}
 	
 	public void addPoints(Set<Point> set, int x, int y) {
-		set.add(new Point(x, y));
-		set.add(new Point(x, -1 * y));
+		set.add(new Point(x, y));		
 		set.add(new Point(-1 * x, y));
+		set.add(new Point(x, -1 * y));
 		set.add(new Point(-1 * x, -1 * y));
 		set.add(new Point(y, x));
 		set.add(new Point(-1 * y, x));
@@ -24,12 +43,11 @@ public class DrawCircle {
 		set.add(new Point(-1 * y, -1 * x));
 	}
 
-	public Set<Point> getPoints(int radius) {
+	public Set<Point> getPoints_binary(int radius) {
 		Set<Point> set = new HashSet<Point>();
 		int rSquare = radius * radius;
 		
 		int x = 1;
-		int y = 0;
 		
 		int y_start = 0;
 		int y_end = 0;
@@ -52,9 +70,6 @@ public class DrawCircle {
 		}
 		x--;
 		int xSquare = x * x;
-//		System.out.println(x);
-//		System.out.println(y_start);
-//		System.out.println(y_end);
 		if (xSquare + y_start * y_start == rSquare) {
 			addPoints(set, x, y_start);
 		}
@@ -63,10 +78,11 @@ public class DrawCircle {
 		}
 		return set;
 	}
+	//public 
 	public static void main(String[] args) {
 		
 		DrawCircle dc = new DrawCircle();
-		Set<Point> set = dc.getPoints(3);
+		Set<Point> set = dc.getPoints_binary(3);
 		
 		for (Point p : set) {
 			System.out.println("[" + p.x + ", " + p.y + "]");
