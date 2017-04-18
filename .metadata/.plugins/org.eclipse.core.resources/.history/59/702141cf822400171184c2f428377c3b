@@ -62,16 +62,16 @@ public class DrawCircle {
 		while (x * x <= rSquare) {
 			y_start = 0;
 			y_end = x;
-			while (y_start + 1 < y_end) {
+			while (y_start <= y_end) {
 				int y_mid = y_start + (y_end - y_start) / 2;
 				int curr = x * x + y_mid * y_mid;
 				if (curr == rSquare) {
 					addPoints(set, x, y_mid);
 				} else if (curr < rSquare) {
 					addPoints(set, x, y_mid);
-					y_start = y_mid;
+					y_start = y_mid + 1;
 				} else {
-					y_end = y_mid;
+					y_end = y_mid - 1;
 				}
 			}
 			x++;

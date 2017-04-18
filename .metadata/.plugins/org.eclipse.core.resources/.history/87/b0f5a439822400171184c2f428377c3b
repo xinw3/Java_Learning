@@ -68,7 +68,6 @@ public class DrawCircle {
 				if (curr == rSquare) {
 					addPoints(set, x, y_mid);
 				} else if (curr < rSquare) {
-					addPoints(set, x, y_mid);
 					y_start = y_mid;
 				} else {
 					y_end = y_mid;
@@ -78,10 +77,10 @@ public class DrawCircle {
 		}
 		x--;
 		int xSquare = x * x;
-		if (xSquare + y_start * y_start <= rSquare) {
+		if (xSquare + y_start * y_start == rSquare) {
 			addPoints(set, x, y_start);
 		}
-		if (xSquare + y_end * y_end <= rSquare) {
+		if (xSquare + y_end * y_end == rSquare) {
 			addPoints(set, x, y_end);
 		}
 		return set;
@@ -110,7 +109,6 @@ public class DrawCircle {
 		DrawCircle dc = new DrawCircle();
 		Set<Point> set = dc.getPoints_binary(3);
 		System.out.println("binary search version:");
-		System.out.println("total points are: " + set.size());
 		for (Point p : set) {
 			System.out.println("[" + p.x + ", " + p.y + "]");
 		}

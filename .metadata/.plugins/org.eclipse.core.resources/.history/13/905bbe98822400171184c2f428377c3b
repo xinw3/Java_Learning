@@ -78,10 +78,10 @@ public class DrawCircle {
 		}
 		x--;
 		int xSquare = x * x;
-		if (xSquare + y_start * y_start <= rSquare) {
+		if (xSquare + y_start * y_start == rSquare) {
 			addPoints(set, x, y_start);
 		}
-		if (xSquare + y_end * y_end <= rSquare) {
+		if (xSquare + y_end * y_end == rSquare) {
 			addPoints(set, x, y_end);
 		}
 		return set;
