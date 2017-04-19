@@ -72,20 +72,11 @@ public class MyHashMap<K, V> {
 			rehash();
 		}
 	}
-	public boolean delete(K k) {
-		int index = getHashVal(k);
+	public void delete() {
 		
 	}
-	public boolean lookup(K k) {
-		int index = getHashVal(k);
-		Entry<K, V> head = entry[index];
-		while (head != null && head.value != k) {
-			head = head.next;
-		}
-		if (head == null) {
-			return false;
-		}
-		return true;
+	public boolean lookup() {
+		
 	}
 	public void clear() {
 		

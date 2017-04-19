@@ -73,7 +73,6 @@ public class MyHashMap<K, V> {
 		}
 	}
 	public boolean delete(K k) {
-		int index = getHashVal(k);
 		
 	}
 	public boolean lookup(K k) {

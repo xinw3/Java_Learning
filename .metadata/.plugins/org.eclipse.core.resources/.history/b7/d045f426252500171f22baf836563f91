@@ -72,8 +72,7 @@ public class MyHashMap<K, V> {
 			rehash();
 		}
 	}
-	public boolean delete(K k) {
-		int index = getHashVal(k);
+	public void delete() {
 		
 	}
 	public boolean lookup(K k) {
