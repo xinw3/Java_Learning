@@ -51,7 +51,7 @@ public class MyHashMap<K, V> {
 			// they will be stored in the form of linkedlist
 			Entry<K, V> head = entry[index];
 			Entry<K, V> curr = head;
-			while (curr != null && !curr.key.equals(k)) {
+			while (curr != null && curr.key != k) {
 				curr = curr.next;
 			}
 			// no same key found, insert in the first place
@@ -78,16 +78,14 @@ public class MyHashMap<K, V> {
 		}
 		int index = getHashVal(k);
 		Entry<K, V> head = entry[index];
-		if (head.key.equals(k)) {
-			entry[index] = head.next;
-		}
+		if (head.key.equals(k))
 		
 	}
 	// 2 we will need it in our delete method
 	public boolean lookup(K k) {
 		int index = getHashVal(k);
 		Entry<K, V> head = entry[index];
-		while (head != null && !head.key.equals(k)) {
+		while (head != null && head.key != k) {
 			head = head.next;
 		}
 		if (head == null) {

@@ -87,7 +87,7 @@ public class MyHashMap<K, V> {
 	public boolean lookup(K k) {
 		int index = getHashVal(k);
 		Entry<K, V> head = entry[index];
-		while (head != null && !head.key.equals(k)) {
+		while (head != null && head.key != k) {
 			head = head.next;
 		}
 		if (head == null) {
