@@ -89,8 +89,8 @@ public class MyHashMap<K, V> {
 			// when found, we need to delete head
 			prev.next = head.next;
 		}
-		size--;
-		return true;	
+		
+		
 	}
 	// 2 we will need it in our delete method
 	public boolean lookup(K k) {

@@ -80,17 +80,8 @@ public class MyHashMap<K, V> {
 		Entry<K, V> head = entry[index];
 		if (head.key.equals(k)) {
 			entry[index] = head.next;
-		} else {
-			Entry<K, V> prev = head;
-			while (!head.key.equals(k)) {
-				prev = head;
-				head = head.next;
-			}
-			// when found, we need to delete head
-			prev.next = head.next;
 		}
-		size--;
-		return true;	
+		
 	}
 	// 2 we will need it in our delete method
 	public boolean lookup(K k) {
