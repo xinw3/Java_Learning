@@ -40,7 +40,7 @@ public class MyHashMap<K, V> {
 			next = null;
 		}
 	}
-	 // 1.
+	 // 1
 	public void add(K k, V v) {
 		int index = getHashVal(k);
 		if (entry[index] == null) {
@@ -72,7 +72,7 @@ public class MyHashMap<K, V> {
 			rehash();
 		}
 	}
-	// 3.
+	// 3
 	public boolean delete(K k) {
 		if (!lookup(k)) {
 			return false;
@@ -106,8 +106,7 @@ public class MyHashMap<K, V> {
 		return true;
 	}
 	public void clear() {
-		entry = new Entry[capacity];
-		size = 0;
+		
 	}
 	public void iterate() {
 		
@@ -117,17 +116,7 @@ public class MyHashMap<K, V> {
 	}
 	// TODO: implement
 	public void rehash() {
-		capacity = capacity << 1;
-		Entry<K, V>[] temp = entry;
-		entry = new Entry[capacity];
-		size = 0;
 		
-		for (Entry<K, V> e : temp) {
-			while (e != null) {
-				add(e.key, e.value);
-				e = e.next;
-			}
-		}
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

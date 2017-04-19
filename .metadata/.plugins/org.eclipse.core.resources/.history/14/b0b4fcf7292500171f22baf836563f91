@@ -123,10 +123,7 @@ public class MyHashMap<K, V> {
 		size = 0;
 		
 		for (Entry<K, V> e : temp) {
-			while (e != null) {
-				add(e.key, e.value);
-				e = e.next;
-			}
+			
 		}
 	}
 	public static void main(String[] args) {

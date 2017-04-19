@@ -117,17 +117,7 @@ public class MyHashMap<K, V> {
 	}
 	// TODO: implement
 	public void rehash() {
-		capacity = capacity << 1;
-		Entry<K, V>[] temp = entry;
-		entry = new Entry[capacity];
-		size = 0;
 		
-		for (Entry<K, V> e : temp) {
-			while (e != null) {
-				add(e.key, e.value);
-				e = e.next;
-			}
-		}
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

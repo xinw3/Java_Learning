@@ -119,7 +119,7 @@ public class MyHashMap<K, V> {
 	public void rehash() {
 		capacity = capacity << 1;
 		Entry<K, V>[] temp = entry;
-		entry = new Entry[capacity];
+		entry = new Entry<K, V>[capacity];
 		size = 0;
 		
 		for (Entry<K, V> e : temp) {
