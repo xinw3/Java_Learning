@@ -30,7 +30,7 @@ public class BitMap {
 		if (arr.length == 0 || offset < 0 || length <= 0) {
 			return;
 		}
-
+		
 		int n = arr.length;
 		for (int i = offset; i < n && i < offset +length; i++) {
 			// if the bit is already 1, continue;
@@ -86,31 +86,29 @@ public class BitMap {
 			arr[i] = 0;
 			// clear descendants
 			clearbit_down(arr, i);
+			
+			int up = i;
+			while (up > 0) {
+				// if its ancestor is already 0, break;
+				if (arr[(up - 1) / 2] == 0) {
+					break;
+				}
+				arr[(up - 1) / 2] = 0;
+				up = (up - 1) / 2;		
+			}
 			// clear ancestors
-			clearbit_up(arr, i);
 		}
 	}
 	public void clearbit_down(int[] arr, int pos) {
-		// we only need to clear its left child
+		// we can only clear its left child
 		int n = arr.length;
-		int down = pos * 2 + 1;
+		int down = i * 2 + 1;
 		while (down < n) {
 			arr[down] = 0;
 			down = 2 * down + 1;
 		}
 	}
 
-	public void clearbit_up(int[] arr, int pos) {
-		int up = pos;
-		while (up > 0) {
-			// if its ancestor is already 0, break;
-			if (arr[(up - 1) / 2] == 0) {
-				break;
-			}
-			arr[(up - 1) / 2] = 0;
-			up = (up - 1) / 2;		
-		}
-	}
 	public static void main(String[] args) {
 		int[] arr = new int[] {0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1};
 		BitMap bm = new BitMap();
@@ -120,5 +118,7 @@ public class BitMap {
 		for (int i : arr) {
 			System.out.print(i + " ");	// 0 0 1 0 0 1 1 0 1 1 0 1 
 		}
+
 	}
+
 }

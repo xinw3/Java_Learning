@@ -98,7 +98,8 @@ public class DrawCircle {
 			for (int j = 0; j <= diameter; j++) {		
 				int y = j - radius;
 				if (x * x + y * y <= rSquare) {
-					set.add(new Point(x, y));
+					//set.add(new Point(x, y));
+					addPoints(set, x, y);
 				}
 			}
 		}
