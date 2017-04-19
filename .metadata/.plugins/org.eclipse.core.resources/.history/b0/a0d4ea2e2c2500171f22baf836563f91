@@ -132,10 +132,11 @@ public class MyHashMap<K, V> {
 				Entry<K, V> temp = curr;
 				count++;
 				curr = curr.next;
-				return temp;				
+				return temp;
+				
 			}
 		};
-		return iterator;	
+		
 	}
 	public int getHashVal(K k) {
 		return Math.abs(k.hashCode()) % capacity;

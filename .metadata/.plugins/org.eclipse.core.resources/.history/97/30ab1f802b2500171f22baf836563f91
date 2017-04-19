@@ -112,30 +112,14 @@ public class MyHashMap<K, V> {
 		size = 0;
 	}
 	public Iterator<Entry<K, V>> iterator() {
-		Iterator<Entry<K, V>> iterator = new Iterator<Entry<K, V>>() {
-			int count = 0;
-			int index = 0;
-			Entry<K, V> curr = entry[index];
-			@Override
-			public boolean hasNext() {
-				return count < size;
-			}
-			@Override
-			public Entry<K, V> next() {
-				if (count >= size) {
-					return null;
-				}
-				while (index < capacity && curr == null) {
-					index++;
-					curr = entry[index];
-				}
-				Entry<K, V> temp = curr;
-				count++;
-				curr = curr.next;
-				return temp;				
-			}
-		};
-		return iterator;	
+		@Override
+		public boolean hasNext() {
+			
+		}
+		@Override
+		public Entry<K, V> next() {
+			
+		}
 	}
 	public int getHashVal(K k) {
 		return Math.abs(k.hashCode()) % capacity;

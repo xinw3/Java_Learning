@@ -125,17 +125,10 @@ public class MyHashMap<K, V> {
 				if (count >= size) {
 					return null;
 				}
-				while (index < capacity && curr == null) {
-					index++;
-					curr = entry[index];
-				}
-				Entry<K, V> temp = curr;
-				count++;
-				curr = curr.next;
-				return temp;				
+				
 			}
 		};
-		return iterator;	
+		
 	}
 	public int getHashVal(K k) {
 		return Math.abs(k.hashCode()) % capacity;
