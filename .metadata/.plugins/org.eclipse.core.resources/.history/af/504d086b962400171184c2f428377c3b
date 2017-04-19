@@ -116,7 +116,7 @@ public class BitMap {
 		BitMap bm = new BitMap();
 		// bm.set_bit(arr, 10, 1);
 		bm.clear_bit(arr, 3, 1);
-
+		
 		for (int i : arr) {
 			System.out.print(i + " ");	// 0 0 1 0 0 1 1 0 1 1 0 1 
 		}
