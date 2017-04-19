@@ -74,18 +74,16 @@ public class BitMap {
 	}
 	public void setBitBFS(int[] arr, int offset, int length) {
 		Queue<Bits> queue = new LinkedList<Bits>();
-		for (int i = 0; i < length; i++) {
-			addToQueue(arr, offset, queue);
-			
-			while (!queue.isEmpty()) {
-				Bits curr = queue.poll();
-				if (curr.up) {
-					addToQueue(arr, (offset - 1) /2, queue);
-				}
-				if (curr.down) {
-					addToQueue(arr, 2 * offset + 1, queue);
-					addToQueue(arr, 2 * offset + 2, queue);
-				}
+		addToQueue(arr, offset, queue);
+		
+		while (!queue.isEmpty()) {
+			Bits curr = queue.poll();
+			if (curr.up) {
+				addToQueue(arr, (offset - 1) /2, queue);
+			}
+			if (curr.down) {
+				addToQueue(arr, 2 * offset + 1, queue);
+				addToQueue(arr, 2 * offset + 2, queue);
 			}
 		}
 	}

@@ -88,6 +88,7 @@ public class BitMap {
 				}
 			}
 		}
+		
 	}
 	public void clearBitBFS(int[] arr, int offset, int length) {
 		

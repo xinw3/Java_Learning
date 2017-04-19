@@ -31,63 +31,18 @@ import java.util.Queue;
 public class BitMap {
 	/* version 2: BFS*/
 	public class Bits {
-		int index;
+		int bit;
 		boolean up;
 		boolean down;
-		public Bits(int idx, boolean u, boolean d) {
-			index = idx;
+		public Bits(int b, boolean u, boolean d) {
+			bit = b;
 			up = u;
 			down = d;
 		}
 	}
-	public int getLevel(int index) {
-		return (int)Math.floor(Math.log(index + 1)/Math.log(2));
-	}
-	// add elements that to be set in each level to the queue
-	public void addToQueue(int[] arr, int offset, Queue<Bits> queue) {
-		int n = arr.length;
-		int level = getLevel(offset);
-		int numElements = (int)Math.pow(2, level);
-
-		for (int i = 0; i < numElements && offset + i < n; i++) {
-			int index = offset + i;
-			boolean up = false;
-			boolean down = false;
-			int bit = arr[index];
-			
-			// need to set children to 1
-			if (bit == 0) {
-				down = true;
-				arr[index] = 1;
-			}
-			// left child
-			if (index % 2 == 1) {
-				int nextBit = arr[index + 1];
-				// need to set parent to 1
-				if (nextBit == 0) {
-					up = true;
-					nextBit = 1;
-				}
-			}	
-			queue.offer(new Bits(index, up, down));
-		}
-	}
 	public void setBitBFS(int[] arr, int offset, int length) {
 		Queue<Bits> queue = new LinkedList<Bits>();
-		for (int i = 0; i < length; i++) {
-			addToQueue(arr, offset, queue);
-			
-			while (!queue.isEmpty()) {
-				Bits curr = queue.poll();
-				if (curr.up) {
-					addToQueue(arr, (offset - 1) /2, queue);
-				}
-				if (curr.down) {
-					addToQueue(arr, 2 * offset + 1, queue);
-					addToQueue(arr, 2 * offset + 2, queue);
-				}
-			}
-		}
+		int level = (int)Math.floor(Math.log(offset + 1)/Math.log(2))
 	}
 	public void clearBitBFS(int[] arr, int offset, int length) {
 		
@@ -100,7 +55,7 @@ public class BitMap {
 		}
 
 		int n = arr.length;
-		for (int i = offset; i < n && i < offset + length; i++) {
+		for (int i = offset; i < n && i < offset +length; i++) {
 			// if the bit is already 1, continue;
 			if (arr[i] == 1) {
 				continue;
@@ -114,28 +69,28 @@ public class BitMap {
 	}
 
 	public void setbit_down(int[] arr, int pos) {
-		int n = arr.length;
-		if (pos > n) {
+		int length = arr.length;
+		if (pos > length) {
 			return;
 		}
 		int left = pos * 2 + 1;
 		int right = pos * 2 + 2;
-		if (left < n && arr[left] == 0) {
+		if (left < length && arr[left] == 0) {
 			arr[left] = 1;
 		}
 		setbit_down(arr, left);
-		if (right < n && arr[right] == 0) {
+		if (right < length && arr[right] == 0) {
 			arr[right] = 1;
 		}
 		setbit_down(arr, right);
 	}
 	public void setbit_up(int[] arr, int pos) {
-		int n = arr.length;
-		if (pos > n) {
+		int length = arr.length;
+		if (pos > length) {
 			return;
 		}
 		while (pos > 0) {
-			if (pos % 2 == 0 && arr[pos - 1] == 1 || (pos % 2 == 1 && pos < n - 1 && arr[pos + 1] == 1)) {
+			if (pos % 2 == 0 && arr[pos - 1] == 1 || (pos % 2 == 1 && pos < length - 1 && arr[pos + 1] == 1)) {
 				arr[(pos - 1) / 2] = 1;
 			}
 			pos = (pos - 1) / 2;
