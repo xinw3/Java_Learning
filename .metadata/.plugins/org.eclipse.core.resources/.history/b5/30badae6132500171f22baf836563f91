@@ -1,0 +1,26 @@
+package purestorage;
+
+public class MyHashMap {
+
+	public void add() {
+		
+	}
+	public void delete() {
+		
+	}
+	public void lookup() {
+		
+	}
+	public void clear() {
+		
+	}
+	public void iterate() {
+		
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

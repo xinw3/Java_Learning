@@ -1982,3 +1982,18 @@ Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.
 
 !ENTRY com.amazonaws.eclipse.sdk.ui 1 0 2017-04-19 08:28:19.874
 !MESSAGE SDK download completes. Location: /var/folders/g4/y8x59s9j4f17hmvvtnb6g6w40000gn/T/aws-java-sdk2038079585166380790/sdk.zip, File-length: 276820357
+
+!ENTRY org.eclipse.jface.text 2 0 2017-04-19 10:54:18.430
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2017-04-19 10:54:18.431
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2017-04-19 12:25:56.741
+!MESSAGE No repository found at http://aws.amazon.com/java.
+
+!ENTRY org.eclipse.jface.text 2 0 2017-04-19 12:26:17.409
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2017-04-19 12:26:17.411
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'

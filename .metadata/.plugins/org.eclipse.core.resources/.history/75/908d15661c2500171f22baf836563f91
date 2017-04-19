@@ -1,0 +1,41 @@
+package purestorage;
+
+public class MyHashMap<K, V> {
+	private Entry[] entry;
+	private int initialCapacity;
+	private int size;
+	
+	// First we need to have our own
+	// underlying data structures
+	// which is a key value pair.
+	private class Entry<K, V> {
+		K key;
+		V value;
+		Entry (K k, V v) {
+			key = k;
+			value = v;
+		}
+	}
+	
+	public void add() {
+		
+	}
+	public void delete() {
+		
+	}
+	public void lookup() {
+		
+	}
+	public void clear() {
+		
+	}
+	public void iterate() {
+		
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
