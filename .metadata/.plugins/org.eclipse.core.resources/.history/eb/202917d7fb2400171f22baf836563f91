@@ -44,8 +44,9 @@ public class Event {
 	 *  Multi-threading version 1
 	 *  We need to protect shared variables 
 	 *  so that only one thread can access them at a time.
-	 *  However, this version can cause deadlock because register
-	 *  function can be callback of another register.
+	 *  However, this version is slow because it makes the two
+	 *  functions atomic so that when one thread executing a function
+	 *  another function would never be executed.
 	 */
 	public void register(Callback cb) {
 		synchronized(lock) {
