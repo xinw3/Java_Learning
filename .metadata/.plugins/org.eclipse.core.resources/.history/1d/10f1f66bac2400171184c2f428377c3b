@@ -53,16 +53,18 @@ public class BitMap {
 			int index = offset + i;
 			boolean up = false;
 			boolean down = false;
+			int bit = arr[index];
 
 			// need to set children to 1
-			if (arr[index] == 0) {
+			if (bit == 0) {
 				down = true;
 				arr[index] = 1;
 			}
 			// left child
 			if (index % 2 == 1) {
+				int nextBit = arr[index + 1];
 				// need to set parent to 1
-				if (arr[index + 1] == 0) {
+				if (nextBit == 0) {
 					up = true;
 					arr[index + 1] = 1;
 				}
@@ -96,20 +98,22 @@ public class BitMap {
 			int index = offset + i;
 			boolean up = false;
 			boolean down = false;
+			int bit = arr[index];
 
 			// need to set children to 0
-			if (arr[index] == 1) {
+			if (bit == 	1) {
 				down = true;
 				arr[index] = 0;
-				// left child
-				if (index % 2 == 1) {
-					// need to set parent to 0
-					if (arr[index + 1] == 1) {
-						up = true;
-						arr[index + 1] = 0;
-					}
-				}	
-			}			
+			}
+			// left child
+			if (index % 2 == 1) {
+				int nextBit = arr[index + 1];
+				// need to set parent to 1
+				if (nextBit == 0) {
+					up = true;
+					nextBit = 1;
+				}
+			}	
 			queue.offer(new Bits(index, up, down));
 		}
 	}

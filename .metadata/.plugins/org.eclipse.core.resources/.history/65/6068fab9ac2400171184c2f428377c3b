@@ -101,15 +101,15 @@ public class BitMap {
 			if (arr[index] == 1) {
 				down = true;
 				arr[index] = 0;
-				// left child
-				if (index % 2 == 1) {
-					// need to set parent to 0
-					if (arr[index + 1] == 1) {
-						up = true;
-						arr[index + 1] = 0;
-					}
-				}	
-			}			
+			}
+			// left child
+			if (index % 2 == 1) {
+				// need to set parent to 1
+				if (arr[index + 1] == 1) {
+					up = true;
+					arr[index + 1] = 0;
+				}
+			}	
 			queue.offer(new Bits(index, up, down));
 		}
 	}

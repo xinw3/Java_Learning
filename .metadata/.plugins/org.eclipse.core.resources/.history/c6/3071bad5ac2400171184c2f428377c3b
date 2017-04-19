@@ -109,7 +109,9 @@ public class BitMap {
 						arr[index + 1] = 0;
 					}
 				}	
-			}			
+			}
+			
+			
 			queue.offer(new Bits(index, up, down));
 		}
 	}
