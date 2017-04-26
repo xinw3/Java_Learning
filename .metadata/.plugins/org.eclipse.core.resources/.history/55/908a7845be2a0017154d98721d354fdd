@@ -2,16 +2,14 @@ package purestorage;
 
 public class Fibonacci {
 
-	public int fib_dynamic2(int n) {
+	public int fib_dynamic1(int n) {
 		int[] fib = new int[3];
 		fib[0] = 0;
 		fib[1] = 1;
 		for (int i = 2; i <= n; i++) {
-			fib[2] = fib[1] + fib[0];
-			fib[0] = fib[1];
-			fib[1] = fib[2];
+			fib[2] = fib[1] + fib[0];			
 		}
-		return fib[1];
+		return fib[n];
 	}
 	public int fib_dynamic1(int n) {
 		int[] fib = new int[n + 1];
@@ -41,7 +39,6 @@ public class Fibonacci {
 		Fibonacci f = new Fibonacci();
 		System.out.println(f.fib(9));
 		System.out.println(f.fib_dynamic1(9));
-		System.out.println(f.fib_dynamic2(9));
 	}
 
 }

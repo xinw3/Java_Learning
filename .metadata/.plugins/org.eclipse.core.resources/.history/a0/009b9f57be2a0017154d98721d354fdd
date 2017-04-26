@@ -41,7 +41,6 @@ public class Fibonacci {
 		Fibonacci f = new Fibonacci();
 		System.out.println(f.fib(9));
 		System.out.println(f.fib_dynamic1(9));
-		System.out.println(f.fib_dynamic2(9));
 	}
 
 }
