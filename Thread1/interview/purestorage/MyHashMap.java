@@ -74,6 +74,18 @@ public class MyHashMap<K, V> {
 			rehash();
 		}
 	}
+	// 2. we will need it in our delete method
+	public boolean lookup(K k) {
+		int index = getHashVal(k);
+		Entry<K, V> head = entry[index];
+		while (head != null && !head.key.equals(k)) {
+			head = head.next;
+		}
+		if (head == null) {
+			return false;
+		}
+		return true;
+	}
 	// 3.
 	public boolean delete(K k) {
 		if (!lookup(k)) {
@@ -95,22 +107,12 @@ public class MyHashMap<K, V> {
 		size--;
 		return true;	
 	}
-	// 2. we will need it in our delete method
-	public boolean lookup(K k) {
-		int index = getHashVal(k);
-		Entry<K, V> head = entry[index];
-		while (head != null && !head.key.equals(k)) {
-			head = head.next;
-		}
-		if (head == null) {
-			return false;
-		}
-		return true;
-	}
+	// 4
 	public void clear() {
 		entry = new Entry[capacity];
 		size = 0;
 	}
+	// 5
 	public Iterator<Entry<K, V>> iterator() {
 		Iterator<Entry<K, V>> iterator = new Iterator<Entry<K, V>>() {
 			int count = 0;
