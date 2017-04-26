@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;purestorage.Fibbonacci&apos; to &apos;Fibonacci&apos;&#x0A;- Original project: &apos;Thread1&apos;&#x0A;- Original element: &apos;purestorage.Fibbonacci&apos;&#x0A;- Renamed element: &apos;purestorage.Fibonacci&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Fibbonacci&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/interview&lt;purestorage{Fibbonacci.java[Fibbonacci" matchStrategy="1" name="Fibonacci" qualified="false" references="true" similarDeclarations="false" stamp="1493237567991" textual="false" version="1.0"/>
+</session>
