@@ -29,7 +29,6 @@ public class Fibonacci {
 		// TODO Auto-generated method stub
 		Fibonacci f = new Fibonacci();
 		System.out.println(f.fib(9));
-		System.out.println(f.fib_dynamic(9));
 	}
 
 }
