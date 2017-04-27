@@ -1,0 +1,17 @@
+package purestorage;
+
+public class Football {
+
+	public int waysGetPoint(int[] points, int score) {
+		// state: dp[i] means how many
+		// ways to get this points
+		int[] dp = new int[score + 1];
+		
+		for (int i = 0;)
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

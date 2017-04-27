@@ -15,7 +15,7 @@ public class Football {
 				}
 			}
 		}
-		return dp[score];
+		return points[score];
 	}
 	public static void main(String[] args) {
 		int points[] = {1,2,3};
