@@ -2,7 +2,6 @@ package purestorage;
 
 public class Fibonacci {
 	
-	// time O(n)
 	public int fibSum_n(int n) {
 		int sum = 0;
 		int[] fib = new int[3];
