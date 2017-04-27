@@ -1,0 +1,70 @@
+package purestorage;
+
+public class Fibonacci {
+
+	/* Because S(n) = F(n+2) - F(1)
+	 * We can calculate the sum simply by
+	 * calculating F(n+2).
+	 */
+	/* time O(n)*/
+	public int fibSum_n(int n) {
+		int sum = 0;
+		int[] fib = new int[3];
+		fib[0] = 0;
+		fib[1] = 1;
+		sum += fib[1] + fib[0];
+		for (int i = 2; i <=n; i++) {
+			fib[2] = fib[1] + fib[0];
+			sum += fib[2];
+			fib[0] = fib[1];
+			fib[1] = fib[2];
+		}
+		return sum;
+	}
+
+	/* time: O(n), space: O(1)*/
+	public int fib_dynamic2(int n) {
+		int[] fib = new int[3];
+		fib[0] = 0;
+		fib[1] = 1;
+		for (int i = 2; i <= n; i++) {
+			fib[2] = fib[1] + fib[0];
+			fib[0] = fib[1];
+			fib[1] = fib[2];
+		}
+		return fib[1];
+	}
+	/* time: O(n), space: O(n)*/
+	public int fib_dynamic1(int n) {
+		int[] fib = new int[n + 1];
+		fib[0] = 0;
+		fib[1] = 1;
+		for (int i = 2; i <= n; i++) {
+			fib[i] = fib[i - 1] + fib[i - 2];			
+		}
+		return fib[n];
+	}
+	
+	/* version 1: recursion
+	 * if we consider the function call stack
+	 * we need O(n) space. Otherwise O(1)
+	 */
+	public int fib(int n) {
+		if (n == 0) {
+			return 0;
+		}
+		if (n == 1) {
+			return 1;
+		}
+		return fib(n - 1) + fib(n - 2);
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Fibonacci f = new Fibonacci();
+//		System.out.println(f.fib(9));
+//		System.out.println(f.fib_dynamic1(9));
+//		System.out.println(f.fib_dynamic2(9));
+		System.out.println(f.fibSum_n(4));
+	}
+
+}
