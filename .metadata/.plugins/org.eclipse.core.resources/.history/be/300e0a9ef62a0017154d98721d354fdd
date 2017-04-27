@@ -2,14 +2,10 @@ package purestorage;
 
 public class Fibonacci {
 
-	/* Because S(n) = F(n+2) - F(1)
-	 * We can calculate the sum simply by
-	 * calculating F(n+2).
-	 */
-//	public int fibSum_logn(int n) {
-//		int sum = 0;
-//		
-//	}
+	public int fibSum_logn(int n) {
+		int sum = 0;
+		
+	}
 	// time O(n)
 	public int fibSum_n(int n) {
 		int sum = 0;
@@ -26,7 +22,6 @@ public class Fibonacci {
 		return sum;
 	}
 
-	/* time: O(n), space: O(1)*/
 	public int fib_dynamic2(int n) {
 		int[] fib = new int[3];
 		fib[0] = 0;
@@ -38,7 +33,7 @@ public class Fibonacci {
 		}
 		return fib[1];
 	}
-	/* time: O(n), space: O(n)*/
+	/*time: O(n), space: O(n)*/
 	public int fib_dynamic1(int n) {
 		int[] fib = new int[n + 1];
 		fib[0] = 0;
